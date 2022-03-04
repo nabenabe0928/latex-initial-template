@@ -1,0 +1,21 @@
+\ifappendix
+% Do nothing
+
+\else
+
+% Define the labels in the main sections
+\customlabel{data1}{1}
+\customlabel{data2}{2}
+
+% Start numberings of each data as if
+% appendix takes over the numbering from the main section
+\renewcommand\thefigure{\arabic{figure}}
+\setcounter{figure}{1}  % start from 2
+\renewcommand\thetable{\arabic{table}}
+\setcounter{table}{2}  % start from 3
+\renewcommand\thealgorithm{\arabic{algorithm}}
+\setcounter{algorithm}{3}  % start from 4
+\renewcommand\theequation{\arabic{equation}}
+\setcounter{equation}{4}  % start from 5
+
+\fi

@@ -1,0 +1,342 @@
+{
+    "EnglishTemplate":{
+        "prefix": "temp-eng",
+        "body": [
+            "\\documentclass[dvipdfmx]{article}",
+            "\\usepackage[utf8]{inputenc}",
+            "\\usepackage{amsmath,amssymb,bm,bbm}",
+            "\\usepackage{graphicx}",
+            "\\usepackage{ascmac}",
+            "\\usepackage{fancyhdr}",
+            "\\usepackage{graphicx}",
+            "\\usepackage{algorithm, algpseudocode}",
+            "\\usepackage{algpseudocode}",
+            "\\usepackage{tikz}",
+            "\\usepackage{ulem}",
+            "\\usepackage{booktabs}",
+            "\\usepackage{multirow}",
+            "\\usepackage[caption=false]{subfig}",
+            "\\usepackage{comment}",
+            "\\usepackage{listings}",
+            "\\usetikzlibrary{chains}",
+            "\\usetikzlibrary{calc}",
+            "\\usepackage{amsmath,tikz}",
+            "\\usepackage{lastpage}",
+            "\\usepackage{tcolorbox}",
+            "\\tcbuselibrary{breakable, skins, theorems}",
+            "\\newtheorem{theorem}{Theorem}",
+            "\\newtheorem{definition}{Definition}",
+            "\\newtheorem{assumption}{Assumption}",
+            "\\def\\qed{\\hfill $\\Box$}",
+            "",
+            "% remove the end from algorithm",
+            "\\algtext*{EndFor}",
+            "\\algtext*{EndWhile}",
+            "\\algtext*{EndIf}",
+            "\\algtext*{EndProcedure}",
+            "\\algtext*{EndFunction}",
+            "\\newcommand{\\Break}{\\textbf{break}}",
+            "\\newcommand{\\Continue}{\\textbf{continue}}",
+            "",
+            "\\setlength{\\textwidth}{156mm}",
+            "\\setlength{\\textheight}{220mm}",
+            "\\setlength{\\oddsidemargin}{5mm}",
+            "\\setlength{\\voffset}{-15mm}",
+            "\\setlength{\\headsep}{10mm}",
+            "\\pagestyle{fancy}",
+            "\\rhead{\\thepage/\\pageref{LastPage}}",
+            "\\cfoot{ }",
+            "",
+            "\\lhead[The Subject name / Shuhei Watanabe]{The subject name / Shuhei Watanabe}",
+            "",
+            "\\title{\\vspace{-15mm} The Subject name}",
+            "\\author{Shuhei Watanabe}",
+            "\\date{\\today}",
+            "",
+            "\\begin{document}",
+            "\\maketitle",
+            "\\thispagestyle{fancy}",
+            "",
+            "\\begin{abstract}",
+            "",
+            "\\end{abstract}",
+            "",
+            "\\section{Introduction}",
+            "",
+            "\\bibliographystyle{splncs04}",
+            "\\bibliography{ref}",
+            "\\end{document}",           
+        ]
+    },
+    "JapaneseTemplate":{
+        "prefix": "temp-jp",
+        "body":[
+            "\\documentclass[11pt,dvipdfmx]{jsarticle}",
+            "\\usepackage[utf8]{inputenc}",
+            "\\usepackage{amsmath,amssymb,bm}",
+            "\\usepackage{graphicx}",
+            "\\usepackage{ascmac}",
+            "\\usepackage{fancyhdr}",
+            "\\usepackage{graphicx}",
+            "\\usepackage{algorithm, algpseudocode}",
+            "\\usepackage{algpseudocode}",
+            "\\usepackage{tikz}",
+            "\\usepackage{ulem}",
+            "\\usepackage{booktabs}",
+            "\\usepackage{multirow}",
+            "\\usepackage[caption=false]{subfig}",
+            "\\usepackage{comment}",
+            "\\usetikzlibrary{chains}",
+            "\\usetikzlibrary{calc}",
+            "\\usepackage{lastpage}",
+            "\\usepackage{amsmath,tikz}",
+            "\\usepackage{tcolorbox}",
+            "\\usepackage{listings}",
+            "\\tcbuselibrary{breakable, skins, theorems}",
+            "\\newtheorem{theorem1}{定理}",
+            "\\newtheorem{theorem2}{定義}",
+            "\\newtheorem{theorem3}{仮定}",
+            "",
+            "% remove the end from algorithm",
+            "\\algtext*{EndFor}",
+            "\\algtext*{EndWhile}",
+            "\\algtext*{EndIf}",
+            "\\algtext*{EndProcedure}",
+            "\\algtext*{EndFunction}",
+            "\\newcommand{\\Break}{\\textbf{break}}",
+            "\\newcommand{\\Continue}{\\textbf{continue}}",
+            "",
+            "\\setlength{\\textwidth}{\\fullwidth}",
+            "\\setlength{\\textheight}{220mm}",
+            "\\setlength{\\oddsidemargin}{0mm}",
+            "\\setlength{\\voffset}{-15mm}",
+            "\\setlength{\\headsep}{10mm}",
+            "",
+            "\\pagestyle{fancy}",
+            "\\rhead{\\thepage/\\pageref{LastPage}}",
+            "\\cfoot{ }",
+            "\\lhead[タイトル 渡邊修平]{タイトル 渡邊修平}",
+            "\\markright{タイトル　渡邊修平}",
+            "",
+            "\\title{\\vspace{-15mm} タイトル}",
+            "\\author{渡邊修平}",
+            "\\date{\\today}",
+            "",
+            "\\begin{document}",
+            "\\maketitle",
+            "\\thispagestyle{fancy}",
+            "",
+            "\\section{はじめに}",
+            "\\bibliographystyle{splncs04}",
+            "\\bibliography{ref}",
+            "",
+            "\\end{document}"
+        ]
+    },
+    "InsertFigure":{
+        "prefix": "insert-figure",
+        "body":[
+            "\\begin{figure}",
+            "\t\\centering",
+            "\t\\includegraphics[width=0.98\\textwidth]{path}",
+            "\t\\caption{}",
+            "\t\\label{}",
+            "\\end{figure}"
+        ]
+    },
+    "InsertMultipleFigures":{
+        "prefix": "insert-multiple-figures",
+        "body": [
+            "\\begin{figure}[tb]",
+            "\t\\begin{center}",
+            "\t\t\\subfloat[\\sloppy comment1]{",
+            "\t\t\t% \\includegraphics[width=0.44\\textwidth]{}",
+            "\t\t}",
+            "\t\t\\subfloat[\\sloppy comment2]{",
+            "\t\t\t% \\includegraphics[width=0.44\\textwidth]{}",
+            "\t\t}",
+            "\t\t\\caption{Caption1.\\label{fig:label1}}",
+            "\t\t\\subfloat[comment3]{",
+            "\t\t\t% \\includegraphics[width=0.30\\textwidth]{}",
+            "\t\t}",
+            "\t\t\\subfloat[comment4]{",
+            "\t\t\t% \\includegraphics[width=0.30\\textwidth]{}",
+            "\t\t}",
+            "\t\t\\subfloat[comment5]{",
+            "\t\t\t% \\includegraphics[width=0.30\\textwidth]{}",
+            "\t\t}",
+            "\t\t\\caption{Caption2. \\label{fig:label2}}",
+            "\t\\end{center}",
+            "\\end{figure}",
+        ]
+    },
+    "CaseParentheses":{
+        "prefix": "case-parentheses",
+        "body":[
+            "\\begin{eqnarray}",
+            "\t\\left\\\\{",
+            "\t\\begin{array}{l}",
+            "\t\t case1 \\\\\\",
+            "\t\t case2",
+            "\t\\end{array}",
+            "\t\\right.",
+            "\\end{eqnarray}"
+        ]
+    },
+    "Matrix":{
+        "prefix": "matrix",
+        "body":[
+            "\\begin{equation}",
+            "\t\\begin{bmatrix}",
+            "\t\ta & b \\\\\\",
+            "\t\tc & d \\\\\\",
+            "\t\\end{bmatrix}",
+            "\\end{equation}"
+        ]
+    },
+    "BigMatrix":{
+        "prefix": "big-matrix",
+        "body":[
+            "\\begin{equation}",
+            "\tA = ",
+            "\t\\begin{bmatrix}",
+            "\t\ta_{1, 1} & \\cdots & a_{1, n} \\\\\\",
+            "\t\t\\vdots & \\ddots & \\vdots \\\\\\",
+            "\t\ta_{n, 1} & \\cdots & a_{n, n}",
+            "\t\\end{bmatrix}",
+            "\\end{equation}"
+        ]
+    },
+    "NewCommandNoArgs":{
+        "prefix": "new-command-no-args",
+        "body": "\\newcommand{command}{process}"
+    },
+    "NewCommandWithArgs":{
+        "prefix": "new-command-args",
+        "body": "\\newcommand{command}[# of args]{#1 #2 process}"
+    },
+    "MultipleEquations":{
+        "prefix": "multiple-equations",
+        "body":[
+            "\\begin{equation}",
+            "\\begin{aligned}",
+            "\tf(x) &= x \\\\\\",
+            "\tg(x) &= x^2",
+            "\\end{aligned}",
+            "\\end{equation}"           
+        ]
+    },
+    "InsertTable":{
+        "prefix": "insert-table",
+        "body": [
+            "\\begin{table}",
+            "\t\\begin{center}",
+            "\t\t\\caption{Caption}",
+            "\t\t\\vspace{2mm}",
+            "\t\t\\label{tab:label}",
+            "\t\t\\begin{tabular}{llll}",
+            "\t\t\t\\toprule",
+            "\t\t\tA & B & C & D \\\\\\",
+            "\t\t\t\\midrule",
+            "\t\t\tE & 1 & 2 & 3 \\\\\\",
+            "\t\t\tF & 1 & 2 & 3 \\\\\\",
+            "\t\t\t& 4 & 5 & 6 \\\\\\",
+            "\t\t\t\\bottomrule",
+            "\t\t\\end{tabular}",
+            "\t\\end{center}",
+            "\\end{table}"
+        ]
+    },
+    "InsertAlgorithm":{
+        "prefix": "insert-algorithm",
+        "body": [
+            "\\begin{algorithm}[tb]",
+            "\t\\caption{The name of Algorithm}",
+            "\t\\label{alg:label}",
+            "\t\\begin{algorithmic}[1]",
+            "\t\t\\Statex{\\$f$} \\Comment{objective function}",
+            "\t\t\\Function{test}{}",
+            "\t\t\\For{\\$i= 0, 1, \\dots$}",
+            "\t\t\\If{condition}",
+            "\t\t\\State{process} \\Comment{comment}",
+            "\t\t\\EndIf",
+            "\t\t\\EndFor",
+            "\t\t\\EndFunction",
+            "\t\\end{algorithmic}",
+            "\\end{algorithm}"
+        ]
+    },
+    "Theorem":{
+        "prefix": "theorem",
+        "body": [
+            "\\vspace{2mm}",
+            "\\begin{tcolorbox}[",
+            "\tcolback = white,",
+            "\tcolframe = blue!10!blue,",
+            "\tfonttitle = \\bfseries,",
+            "\tbreakable = true]",
+            "\t\\begin{theorem1}\\leavevmode \\par",
+            "\t\\end{theorem1}",
+            "\\end{tcolorbox}"
+        ]
+    },
+    "Definition":{
+        "prefix": "definition",
+        "body": [
+            "\\vspace{2mm}",
+            "\\begin{tcolorbox}[",
+            "\tcolback = white,",
+            "\tcolframe = black!10!black,",
+            "\tfonttitle = \\bfseries,",
+            "\tbreakable = true]",
+            "\t\\begin{theorem2}\\leavevmode \\par",
+            "\t\\end{theorem2}",
+            "\\end{tcolorbox}"
+        ]
+    },
+    "Assumption":{
+        "prefix": "assumption",
+        "body": [
+            "\\vspace{2mm}",
+            "\\begin{tcolorbox}[",
+            "\tcolback = white,",
+            "\tcolframe = black!10!black,",
+            "\tfonttitle = \\bfseries,",
+            "\tbreakable = true]",
+            "\t\\begin{theorem3}\\leavevmode \\par",
+            "\t\\end{theorem3}",
+            "\\end{tcolorbox}"
+        ]
+    },
+    "SourceCode":{
+        "prefix": "source-code",
+        "body":[
+            "\\lstset{",
+            "\tframe=single,",
+            "\tnumbers=left",
+            "}",
+            "",
+            "\\begin{minipage}[t]{0.98\\textwidth}",
+            "\\begin{lstlisting}[language=python,caption=aaa\\vspace{1mm},label=source-code]",
+            "",
+            "\\end{lstlisting}",
+            "\\end{minipage}"
+        ]
+    },
+    "Combination":{
+        "prefix": "combination",
+        "body": "\\newcommand{\\comb}[2]{{}_#1 \\mathrm{C} _#2}"
+    },
+    "Kahoot":{
+        "prefix": "kahoot",
+        "body": [
+            "{\\bf Question}",
+            "\\begin{enumerate}",
+            "\t\\item o",
+            "\t\\item x",
+            "\t\\item ",
+            "\t\\item ",
+            "\\end{enumerate}"
+        ]
+    }
+}

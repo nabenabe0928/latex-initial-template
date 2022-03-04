@@ -1,0 +1,33 @@
+\newif\ifunderreview
+\newif\ifsubmission
+\newif\ifappendix
+
+% Whether under review or not
+% \underreviewtrue
+\underreviewfalse
+
+% Whether submission version or not
+% \submissiontrue
+\submissionfalse
+
+% Whether to include appendix or not
+% \appendixtrue
+\appendixfalse
+
+\ifsubmission
+\newcommand{\todo}[1]{}
+\newcommand{\replace}[2]{}
+\newcommand{\sw}[1]{}
+
+\else
+% ToDo
+\newcommand{\todo}[1]{\textbf{\textcolor{red}{[TODO: #1]}}}
+
+% deletion
+\newcommand{\replace}[2]{\textbf{\textcolor{red}{[del: \cancel{#1}]}}\textbf{\textcolor{blue}{[new: #2]}}}
+
+% Shuhei comment
+\newcommand{\sw}[1]{\textbf{\textcolor{cyan}{[SW: #1]}}}
+
+\fi
+
