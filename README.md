@@ -1,3 +1,9 @@
+# Usage
+Copy all the files using the following command:
+```shell
+$ ./copy.sh -d <working directory of the latex project>
+```
+
 # Naming rules of labels
 1. Use the following format:
 ```
