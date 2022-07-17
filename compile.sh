@@ -1,3 +1,5 @@
+# for fn in submission
+# for fn in appendix
 for fn in submission appendix
 do
     mkdir out/
