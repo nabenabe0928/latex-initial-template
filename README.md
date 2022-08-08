@@ -3,6 +3,12 @@
 2. Change the `bibliographystyle` path of both `submission.tex` and `appendix-full-contents.tex`
 3. Add codes required for `preamble.tex` and `user-commands.tex`
 4. Add conference specific packages and format to `packages.tex` if required
+5. Change the `documentclass` for conference submissions
+
+**NOTE:**
+
+For arXiv upload, `\pdfoutput=1` and `\documentclass{something}` must appear in the first five lines of submission.tex.
+Additionally, `ref.bbl` and `appx.bbl` must be included in the zip file for the upload.
 
 # Descriptions of each file
 Here are the descriptions for each file in this repository.
