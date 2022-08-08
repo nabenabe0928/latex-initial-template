@@ -24,11 +24,36 @@
 \usepackage{tcolorbox}
 \usepackage{multibib}
 \tcbuselibrary{breakable, skins, theorems}
+
+% a mathematical statement that is proved using rigorous mathematical reasoning.
+% In a mathematical paper, the term theorem is often reserved for the most important results.
 \newtheorem{theorem}{Theorem}
-\newtheorem{proof}{Proof}
+
+% a result in which the (usually short) proof relies heavily on a given theorem.
+\newtheorem{corollary}{Corollary}
+
+% a proved and often interesting result, but generally less important than a theorem.
+\newtheorem{proposition}{Proposition}
+
+% a minor result whose sole purpose is to help in proving a theorem.
+% It is a stepping stone on the path to proving a theorem.
+% Very occasionally lemmas can take on a life of their own.
 \newtheorem{lemma}{Lemma}
+
+% an assertion that is then proved.
+% It is often used like an informal lemma.
+\newtheorem{claim}{Claim}
+
+% a precise and unambiguous description of the meaning of a mathematical term.
+% It characterizes the meaning of a word by giving all the properties and only those properties that must be true.
 \newtheorem{definition}{Definition}
+
+% a statement that is assumed to be true without proof.
+% These are the basic building blocks from which all theorems are proved.
 \newtheorem{assumption}{Assumption}
+
+\newtheorem{proof}{Proof}
+
 \def\qed{\hfill $\Box$}
 
 % remove the end from algorithm

@@ -61,3 +61,10 @@ root
 3. Each Table, Algorithm, Figure should be defined in a separated file to make location changes quicker and easier
 4. Equations should be defined in a separated file as it enhances the readability
 5. Longer symbols in equations should be defined as a user command for the readability
+
+# Mathematical statements
+1. Theorem: a mathematical statement that is proved using rigorous mathematical reasoning
+2. Corollary: a result in which the (usually short) proof relies heavily on a given theorem
+3. Proposition: a proved and often interesting result, but generally less important than a theorem
+4. Lemma: a minor result whose sole purpose is to help in proving a theorem
+5. Claim: an assertion that is then proved
