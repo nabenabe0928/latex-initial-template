@@ -2,29 +2,39 @@
 %%%% DEFINE CONFERENCE SPECIFIC PACKAGES AND STYLE %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% some packages that might cause errors
 \usepackage[hidelinks]{hyperref}  % NOTE: You might want to remove this for some errors
-
 \usepackage[utf8]{inputenc}
+\usepackage{url}
+
+% math
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{bm}
 \usepackage{bbm}
-\usepackage{tikz}
-\usepackage{ascmac}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{algorithm, algpseudocode}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{mathtools}
+
+% algorithm
+\usepackage{ascmac}  % ascmac must come before `algorithm' and `algpseudocode'
+\usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage{ulem}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage[caption=false]{subfig}
-\usepackage{comment}
-\usepackage{listings}
-\usepackage{lastpage}
+
+% fancy viz
+\usepackage{fancyhdr}
 \usepackage{tcolorbox}
+\usepackage{tikz}
+
+% utils
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{lastpage}
+\usepackage{listings}
 \usepackage{multibib}
+\usepackage{multirow}
+\usepackage[super]{nth}
+\usepackage[caption=false]{subfig}
+
 \tcbuselibrary{breakable, skins, theorems}
 
 % a mathematical statement that is proved using rigorous mathematical reasoning.
