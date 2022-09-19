@@ -11,4 +11,5 @@ do
     mv ${fn}.* out/
     mv appx.* out/
     mv out/${fn}.tex .
+    python label_extractor.py --name ${fn}
 done
