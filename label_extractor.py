@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 
 import csv
+import os
 
 
 if __name__ == "__main__":
@@ -16,6 +17,7 @@ if __name__ == "__main__":
             if "newlabel{" in cmd and ":" in cmd:
                 lines.append(["- " + cmd.split("newlabel{")[1].split("}")[0]])
 
-    with open(f"{args.name}-labels-list.md", "w") as f:
+    os.makedirs("labels/", exist_ok=True)
+    with open(f"labels/{args.name}.md", "w") as f:
         writer = csv.writer(f)
         writer.writerows(lines)
