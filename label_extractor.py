@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 
 import csv
+import json
 import os
 
 
@@ -15,9 +16,15 @@ if __name__ == "__main__":
         for row in reader:
             cmd = row[0]
             if "newlabel{" in cmd and ":" in cmd:
-                lines.append(["- " + cmd.split("newlabel{")[1].split("}")[0]])
+                lines.append(cmd.split("newlabel{")[1].split("}")[0])
 
-    os.makedirs("labels/", exist_ok=True)
-    with open(f"labels/{args.name}.md", "w") as f:
-        writer = csv.writer(f)
-        writer.writerows(lines)
+    file_name = f".vscode/labels-{args.name}.code-snippets"
+    new_data = {}
+    for line in lines:
+        new_data[line] = {
+            "prefix": line,
+            "body": line,
+        }
+    
+    with open(file_name, "w") as f:
+        json.dump(new_data, f, indent=4)
