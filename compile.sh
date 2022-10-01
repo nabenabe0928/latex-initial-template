@@ -1,6 +1,6 @@
-# for fn in submission
+for fn in submission
 # for fn in appendix
-for fn in submission appendix
+# for fn in submission appendix
 do
     mkdir out/
     pdflatex ${fn}.tex

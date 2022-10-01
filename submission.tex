@@ -4,18 +4,18 @@
 
 \input{settings/preamble.tex}
 
-\hypersetup{draft}
+% \hypersetup{draft} % <=== use it if you get page-breaking at hyperref issues
 \begin{document}
 \input{settings/author-info.tex}
-\input{sections/abstract.tex}
+\input{sections/abstract/main.tex}
 
-\input{sections/introduction.tex}
-\input{sections/related-work.tex}
-\input{sections/background.tex}
-\input{sections/methods.tex}
-\input{sections/experiments.tex}
-\input{sections/conclusions.tex}
-\input{sections/acknowledgements.tex}
+\input{sections/introduction/main.tex}
+\input{sections/related-work/main.tex}
+\input{sections/background/main.tex}
+\input{sections/methods/main.tex}
+\input{sections/experiments/main.tex}
+\input{sections/conclusions/main.tex}
+\input{sections/misc/acknowledgements.tex}
 
 \bibliographystyle{splncs04}  % <==== Change the style file path
 \bibliography{ref}
