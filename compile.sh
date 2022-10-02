@@ -1,3 +1,5 @@
+ref=ref  # the bibtex file name
+
 for fn in submission
 # for fn in appendix
 # for fn in submission appendix
@@ -11,5 +13,5 @@ do
     mv ${fn}.* out/
     mv appx.* out/
     mv out/${fn}.tex .
-    python label_extractor.py --name ${fn}
+    python label_extractor.py --file ${fn} --ref ${ref}
 done

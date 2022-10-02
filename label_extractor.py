@@ -7,18 +7,29 @@ import os
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    parser.add_argument("--name", type=str, required=True)
+    parser.add_argument("--file", type=str, required=True)
+    parser.add_argument("--ref", type=str, required=True)
     args = parser.parse_args()
 
     lines = []
-    with open(f"out/{args.name}.aux", "r") as f:
+    with open(f"out/{args.file}.aux", "r") as f:
         reader = csv.reader(f)
         for row in reader:
             cmd = row[0]
             if "newlabel{" in cmd and ":" in cmd:
                 lines.append(cmd.split("newlabel{")[1].split("}")[0])
 
-    file_name = f".vscode/labels-{args.name}.code-snippets"
+    with open(f"{args.ref}.bib", "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) == 0:
+                continue
+
+            cmd = row[0]
+            if "@" in cmd and "{" in cmd:
+                lines.append(cmd.split("{")[1])
+
+    file_name = f".vscode/labels-{args.file}.code-snippets"
     new_data = {}
     for line in lines:
         new_data[line] = {
