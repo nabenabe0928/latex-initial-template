@@ -18,4 +18,9 @@
 \renewcommand\theequation{\arabic{equation}}
 \setcounter{equation}{4}  % start from 5
 
+% Change the numbering of sections to Alphabetic
+\renewcommand{\thesection}{\Alph{section}} 
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesection.\arabic{subsection}.\arabic{subsubsection}}
+
 \fi

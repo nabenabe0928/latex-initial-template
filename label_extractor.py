@@ -2,7 +2,6 @@ from argparse import ArgumentParser
 
 import csv
 import json
-import os
 
 
 if __name__ == "__main__":
@@ -12,12 +11,14 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     lines = []
+    custom_labels = {}
     with open(f"out/{args.file}.aux", "r") as f:
         reader = csv.reader(f)
         for row in reader:
             cmd = row[0]
             if "newlabel{" in cmd and ":" in cmd:
                 lines.append(cmd.split("newlabel{")[1].split("}")[0])
+                custom_labels[lines[-1]] = cmd.split("{{")[1].split("}")[0]
 
     with open(f"{args.ref}.bib", "r") as f:
         reader = csv.reader(f)
@@ -36,6 +37,10 @@ if __name__ == "__main__":
             "prefix": line,
             "body": line,
         }
-    
+
     with open(file_name, "w") as f:
         json.dump(new_data, f, indent=4)
+
+    for cmd, num in custom_labels.items():
+        out = "\\customlabel{" + cmd + "}{" + num + "}"
+        print(out)
