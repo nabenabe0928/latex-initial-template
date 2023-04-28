@@ -226,6 +226,15 @@
             "\\end{equation}"           
         ]
     },
+    "MultipleEquationsWithPageBreak":{
+        "prefix": "multiple-equations-with-page-break",
+        "body":[
+            "\\begin{align}",
+            "\tf(x) &= x \\displaybreak[4] \\\\\\",
+            "\tg(x) &= x^2",
+            "\\end{align}",
+        ]
+    },
     "InsertTable":{
         "prefix": "insert-table",
         "body": [
