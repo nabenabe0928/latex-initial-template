@@ -1,3 +1,14 @@
+# Checklist for paper writing
+1. Capitalize title, sections, and subsections by [APA](https://capitalizemytitle.com/style/APA/),
+2. Itemize with appropriate punctuations,
+3. Start captions with a summary without a subject,
+4. Describe the instructions of how to read figures or tables with the bolded indicator (Right, Left and so on),
+5. For 3x3 figures, use Center for the $x$-axis and Middle for the $y$-axis,
+6. Number all the equations,
+7. Do not use low-level information in Abstract,
+8. Cite papers in Introduction if using any terms that might be not common in the field, and
+9. Do not explain in Introduction, but write only why and how in two sentences at most.
+
 # Usage
 1. Tap the `Use this template` button to clone this repository for a new repository
 2. Change the `bibliographystyle` path of both `submission.tex` and `appendix-full-contents.tex`
