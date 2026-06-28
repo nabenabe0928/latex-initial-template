@@ -4,7 +4,7 @@ for fn in submission
 # for fn in appendix
 # for fn in submission appendix
 do
-    mkdir out/
+    mkdir -p out/
     pdflatex ${fn}.tex
     pbibtex ${fn}
     pbibtex appx

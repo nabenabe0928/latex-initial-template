@@ -1,28 +1,29 @@
 % Both \pdfoutput and \documentclass must be defined in submission.tex for arxiv upload
 % \pdfoutput=1 % <=== remove % for arxiv upload
-\documentclass{article}  % <===== This line must be replaced for conference papers
+\documentclass{article}
 
+\usepackage{automl}  % options: final, preprint, revealauthors, workshop, hidesupplement
 \input{settings/preamble.tex}
 
 % \hypersetup{draft} % <=== use it if you get page-breaking at hyperref issues
 \begin{document}
-\input{settings/author-info.tex}
-\input{sections/abstract/main.tex}
+\maketitle
+\input{sections/abstract.tex}
 
 \begin{align}
   f(x) &= x \displaybreak[0] \\
   g(x) &= x^2
 \end{align}
 
-\input{sections/introduction/main.tex}
-\input{sections/related-work/main.tex}
-\input{sections/background/main.tex}
+\input{sections/introduction.tex}
+\input{sections/related-work.tex}
+\input{sections/background.tex}
 \input{sections/methods/main.tex}
 \input{sections/experiments/main.tex}
-\input{sections/conclusions/main.tex}
+\input{sections/conclusions.tex}
 \input{sections/misc/acknowledgements.tex}
 
-\bibliographystyle{splncs04}  % <==== Change the style file path
+\bibliographystyle{apalike}
 \bibliography{ref}
 
 % Automatically include or exclude the appendix information based on paper-status.tex

@@ -1,4 +1,213 @@
-\input{settings/packages.tex}
-\input{settings/layout.tex}  % comment out this line for conference papers
-\input{settings/paper-status.tex}
-\input{settings/user-commands.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% DEFINE CONFERENCE SPECIFIC PACKAGES AND STYLE %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% some packages that might cause errors
+% NOTE: hyperref is loaded by automl.sty; add it here only when not using automl
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+
+% math
+\usepackage{amsmath}
+\let\Bbbk\relax  % newtxmath (via automl.sty) defines \Bbbk before amssymb does
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{mathtools}
+
+% algorithm
+\usepackage{ascmac}  % ascmac must come before `algorithm' and `algpseudocode'
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% fancy viz
+% NOTE: fancyhdr is loaded and configured by automl.sty
+\usepackage{tcolorbox}
+\usepackage{tikz}
+
+% utils
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage[super]{nth}
+% NOTE: subfig conflicts with subcaption loaded by automl.sty; use \subcaptionbox instead
+
+\tcbuselibrary{breakable, skins, theorems}
+
+\allowdisplaybreaks
+
+% a mathematical statement that is proved using rigorous mathematical reasoning.
+% In a mathematical paper, the term theorem is often reserved for the most important results.
+\newtheorem{theorem}{Theorem}
+
+% a result in which the (usually short) proof relies heavily on a given theorem.
+\newtheorem{corollary}{Corollary}
+
+% a proved and often interesting result, but generally less important than a theorem.
+\newtheorem{proposition}{Proposition}
+
+% a minor result whose sole purpose is to help in proving a theorem.
+% It is a stepping stone on the path to proving a theorem.
+% Very occasionally lemmas can take on a life of their own.
+\newtheorem{lemma}{Lemma}
+
+% an assertion that is then proved.
+% It is often used like an informal lemma.
+\newtheorem{claim}{Claim}
+
+% a precise and unambiguous description of the meaning of a mathematical term.
+% It characterizes the meaning of a word by giving all the properties and only those properties that must be true.
+\newtheorem{definition}{Definition}
+
+% a statement that is assumed to be true without proof.
+% These are the basic building blocks from which all theorems are proved.
+\newtheorem{assumption}{Assumption}
+
+\newtheorem{proof}{Proof}
+
+\def\qed{\hfill $\Box$}
+
+% remove the end from algorithm
+\algtext*{EndFor}
+\algtext*{EndWhile}
+\algtext*{EndIf}
+\algtext*{EndProcedure}
+\algtext*{EndFunction}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\newcommand{\Break}{\textbf{break}}
+\newcommand{\Continue}{\textbf{continue}}
+
+% Add `References` for Appendix
+\newcites{appx}{References}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% PAPER STATUS FLAGS %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\ifunderreview
+\newif\ifsubmission
+\newif\ifappendix
+
+% Whether under review or not
+% \underreviewtrue
+\underreviewfalse
+
+% Whether submission version or not
+% \submissiontrue
+\submissionfalse
+
+% Whether to include appendix or not
+\appendixtrue
+% \appendixfalse
+
+\ifsubmission
+\newcommand{\todo}[1]{}
+\newcommand{\replace}[2]{}
+\newcommand{\sw}[1]{}
+
+\else
+% ToDo
+\newcommand{\todo}[1]{\textbf{\textcolor{red}{[TODO: #1]}}}
+
+% deletion
+\newcommand{\replace}[2]{\textbf{\textcolor{red}{[del: \cancel{#1}]}}\textbf{\textcolor{blue}{[new: #2]}}}
+
+% Shuhei comment
+\newcommand{\sw}[1]{\textbf{\textcolor{cyan}{[SW: #1]}}}
+
+% show label names inline
+\usepackage[inline]{showlabels}
+
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% USER COMMANDS      %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The labeling for the section numbers in appendix
+\makeatletter
+\newcommand{\customlabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{}
+}
+\makeatother
+
+\newcommand{\citewithname}[2]{#1 \textit{et al.} \shortcite{#2}}
+
+% argmin/argmax
+\newcommand{\argmin}{\mathop{\mathrm{argmin}}}
+\newcommand{\argmax}{\mathop{\mathrm{argmax}}}
+\newcommand{\indic}[1]{\mathbb{I}[#1]}
+\newcommand{\comb}[2]{{}_#1 \mathrm{C} _#2}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\brown}[1]{\textcolor{brown}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\darkgray}[1]{\textcolor{darkgray}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\lightgray}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\lime}[1]{\textcolor{lime}{#1}}
+\newcommand{\magenta}[1]{\textcolor{magenta}{#1}}
+\newcommand{\olive}[1]{\textcolor{olive}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\pink}[1]{\textcolor{pink}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+\newcommand{\violet}[1]{\textcolor{violet}{#1}}
+\newcommand{\white}[1]{\textcolor{white}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\renewcommand{\eqref}[1]{Eq.~(\ref{#1})}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttm,
+  morekeywords={self},              % Add keywords here
+  keywordstyle=\ttb\color{deepblue},
+  emph={MyClass,__init__},          % Custom highlighting
+  emphstyle=\ttb\color{deepred},    % Custom highlighting style
+  stringstyle=\color{deepgreen},
+  frame=tb,                         % Any extra options here
+  showstringspaces=false,
+  commentstyle=\color{deepgreen}
+}
+
+% \author[1,$\ast$]{\nameemail{Author 1}{email1@example.com}}
+% \author[1,2,$\ast$]{\nameemail{Author 2}{email2@example.com}}
+% \author[2]{\nameemail{Author 3}{email3@example.com}}
+
+% \affil[$\ast$]{Equal contribution.}
+% \affil[1]{Institution 1}
+% \affil[2]{Institution 2}
+
+\title{title}
+
+% define PDF metadata, aids in accessibility of the resulting PDF
+\ifunderreview
+% no metadata for anonymity.
+\else
+\hypersetup{%
+  pdfauthor={AutoML},
+  pdftitle={Documentation for the automl Package},
+  pdfsubject={Documentation for automl Package},
+  pdfkeywords={AutoML, LaTeX, style}
+}
+\fi
